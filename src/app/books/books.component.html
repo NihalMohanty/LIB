@@ -1,0 +1,22 @@
+<button class="btn btn-success" (click)="addBooks()">Add Book</button>
+<br>
+<br>
+<br>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of arr">
+      <td>{{ person.id }}</td>
+      <td>{{ person.text }}</td>
+      <td><button class="btn btn-success" >edit</button>&nbsp;
+        <button class="btn btn-danger">delete</button>
+    </td>
+    </tr>
+  </tbody>
+</table>
