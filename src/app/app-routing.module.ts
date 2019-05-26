@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { BooksComponent } from './books/books.component';
 import { AddBooksComponent } from './books/add-books/add-books.component';
+import { EditBookeComponent } from './books/edit-booke/edit-booke.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'addbooks',
     component: AddBooksComponent
+  },
+  {
+    path: 'editbook',
+    component: EditBookeComponent
   }
 ];
 
