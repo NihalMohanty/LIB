@@ -9,6 +9,20 @@ import { HeaderComponent } from './header/header.component';
 import { BooksComponent } from './books/books.component';
 import { DataTablesModule } from 'angular-datatables';
 import { AddBooksComponent } from './books/add-books/add-books.component';
+import { FormsModule }   from '@angular/forms';
+import { BookServiceService } from './services/book-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { EditBookeComponent } from './books/edit-booke/edit-booke.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { RegisterComponent } from './user/register/register.component';
+import { LoginComponent } from './user/login/login.component';
+import { IssuedbooksComponent } from './books/issuedbooks/issuedbooks.component';
+
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -19,13 +33,23 @@ import { AddBooksComponent } from './books/add-books/add-books.component';
     HeaderComponent,
     BooksComponent,
     AddBooksComponent,
+    EditBookeComponent,
+    RegisterComponent,
+    LoginComponent,
+    IssuedbooksComponent,
+    // AngularFireAuthModule,
+    // AngularFirestoreModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [BookServiceService,AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

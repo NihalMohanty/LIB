@@ -17,4 +17,14 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/dashboard']);
   }
 
+  goRegister(){
+    console.log("Register");
+    this.router.navigate(['/register']);
+  }
+
+  goLogin(){
+    console.log("login");
+    this.router.navigate(['/login']);
+  }
+
 }

@@ -1,22 +1,22 @@
 <div class="jumbotron">
   <div >
-<form #addform="ngForm" (ngSubmit)="addBook(addform.value)" class="form form-register">
+<form #editform="ngForm" (ngSubmit)="editBook(editform.value)" class="form form-register">
+        <div class="form-group">
+                <!-- <label for="book_Name">id: </label> -->
+                <input class="form-control" placeholder="Name" type="hidden" [(ngModel)]="book.id" name="id">
+          </div>
     <div class="form-group">
         <label for="book_Name">Name : </label>
-        <input class="form-control" placeholder="Name" type="text" #name="ngModel" [(ngModel)]="book_Name" name="book_Name" required>
-       <!-- <br> -->
-    
-    </div>
-    <div *ngIf="name.invalid &&  name.touched" class="alert alert-danger">
-            <div *ngIf="name.errors.required">
-              Name is required.
-             </div>
-             </div>
-  <div class="form-group"> 
+        <input class="form-control" placeholder="Name" type="text" #name="ngModel" required [(ngModel)]="book.book_Name" name="book_Name">
+  </div>
+  <div *ngIf="name.invalid &&  name.touched" class="alert alert-danger">
+        <div *ngIf="name.errors.required">
+          Name is required.
+         </div>
+         </div>
+  <div class="form-group">
       <label for="author">Author : </label>
-      <input class="form-control" placeholder="author" type="text" #authorName="ngModel" [(ngModel)]="author" name="author" required>
-      <!-- <br> -->
-        
+      <input class="form-control" placeholder="author" type="text" #authorName="ngModel" required [(ngModel)]="book.author" name="author">
 </div>
 <div *ngIf="authorName.invalid &&  authorName.touched" class="alert alert-danger">
         <div *ngIf="authorName.errors.required">
@@ -26,14 +26,13 @@
 <div class="form-group">
     <label for="book_type">Book Type : </label>
     <br>
-    <select class="form-control" #bookType="ngModel" [(ngModel)]="book_type" name="book_type" required>
+    <select class="form-control" #bookType="ngModel" required [(ngModel)]="book.book_type" name="book_type">
         <option selected disabled></option>
         <option value="Electrical">Electrical</option>
         <option value="Mecanics">Mecanics</option>
         <option value="Computer Architecture" >Computer Architecture</option>
         <option value="Networking">Networking</option>
       </select>
-     
 </div>
 <div *ngIf="bookType.invalid &&  bookType.touched" class="alert alert-danger">
         <div *ngIf="bookType.errors.required">
@@ -43,7 +42,7 @@
 <!-- <br> -->
 <div class="form-group">
     <label for="quantity">quantity : </label>
-    <input class="form-control" placeholder="quantity" #bookQantity="ngModel" type="number" [(ngModel)]="quantity" name="quantity" required>
+    <input class="form-control" placeholder="quantity" #bookQantity="ngModel" required type="number" [(ngModel)]="book.quantity" name="quantity">
 </div>
 <div *ngIf="bookQantity.invalid &&  bookQantity.touched" class="alert alert-danger">
         <div *ngIf="bookQantity.errors.required">
@@ -52,7 +51,7 @@
          </div>
 <div class="form-group">
     <label for="edition">Edition : </label>
-    <input class="form-control" placeholder="edition" type="text" #bookEdition="ngModel" [(ngModel)]="edition" name="edition" required>
+    <input class="form-control" placeholder="edition" #bookEdition="ngModel" required type="text" [(ngModel)]="book.edition" name="edition" >
 </div>
 <div *ngIf="bookEdition.invalid &&  bookEdition.touched" class="alert alert-danger">
         <div *ngIf="bookEdition.errors.required">
@@ -61,7 +60,7 @@
          </div>
 <div class="form-group">
     <label for="prise">Prise : </label>
-    <input class="form-control" placeholder="prise" type="number" #bookPrise="ngModel" [(ngModel)]="prise" name="prise" required>
+    <input class="form-control" placeholder="prise" #bookPrise="ngModel" required type="number" [(ngModel)]="book.prise" name="prise">
 </div>
 <div *ngIf="bookPrise.invalid &&  bookPrise.touched" class="alert alert-danger">
         <div *ngIf="bookPrise.errors.required">
@@ -70,14 +69,14 @@
          </div>
 <div class="form-group">
     <label for="book_image_url">Image Url : </label>
-    <input class="form-control" placeholder="Image Url" type="text" #bookImage="ngModel" [(ngModel)]="book_image_url" name="book_image_url" required>
+    <input class="form-control" placeholder="Image Url" type="text" #bookImage="ngModel" required [(ngModel)]="book.book_image_url" name="book_image_url">
 </div>
 <div *ngIf="bookImage.invalid &&  bookImage.touched" class="alert alert-danger">
         <div *ngIf="bookImage.errors.required">
                 Image URL can't be empty.
          </div>
          </div>
-<button type="submit" class="btn btn-success" [disabled]="addform.invalid">submit</button>
+<button type="submit" class="btn btn-success" [disabled]="editform.invalid">submit</button>
 </form>
 </div>
 </div>
