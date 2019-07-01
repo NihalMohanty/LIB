@@ -8,7 +8,13 @@ export class Book{
     private book_image_url:string;
     private edition:string;
     private prise:number;
-    private quantity:number;
+
+    // private addDate:Date;
+    // private issueDate:Date;
+    // private returnDate:Date;
+
+    public quantity:number;
+
     // private borrowed_book_qt:number;
     
     

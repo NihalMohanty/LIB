@@ -17,6 +17,12 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { RegisterComponent } from './user/register/register.component';
+import { LoginComponent } from './user/login/login.component';
+import { IssuedbooksComponent } from './books/issuedbooks/issuedbooks.component';
+
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -28,6 +34,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
     BooksComponent,
     AddBooksComponent,
     EditBookeComponent,
+    RegisterComponent,
+    LoginComponent,
+    IssuedbooksComponent,
+    // AngularFireAuthModule,
+    // AngularFirestoreModule
   ],
   imports: [
     BrowserModule,
