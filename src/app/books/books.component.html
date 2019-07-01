@@ -18,22 +18,6 @@
   </thead>
   <tbody>
     <tr *ngFor="let book of booksArrray">
-      <!-- <td>{{ book.payload.doc.data().book_Name }}</td>
-      <td>{{ book.payload.doc.data().author }}</td>
-      <td>{{ book.payload.doc.data().book_type }}</td>
-      <td>{{ book.payload.doc.data().quantity }}</td> -->
-
-      <!-- <td>{{ book.borrowed_book_qt }}</td> -->
-
-      <!-- <td>{{ book.payload.doc.data().edition }}</td>
-      <td>{{ book.payload.doc.data().prise }}</td> -->
-
-      <!-- <td>{{ book.payload.doc.data().book_image_url }}</td> -->
-<!-- 
-      <td><button class="btn btn-success" (click)="editBooks(book)">edit</button>&nbsp;
-        <button class="btn btn-danger" (click)="deleteBooks(book)">delete</button>
-    </td> -->
-
 
     <td>{{ book.book_Name }}</td>
       <td>{{ book.author }}</td>
@@ -42,7 +26,6 @@
       <!-- <td>{{ book.borrowed_book_qt }}</td> -->
       <td>{{ book.edition }}</td>
       <td>{{ book.prise }}</td>
-      <!-- <td>{{ book.payload.doc.data().book_image_url }}</td> -->
       <td><img src="{{book.book_image_url}}" class="img-thumbnail" alt="Cinque Terre" ></td>
       <td><button class="btn btn-primary btn-xs" (click)="editBooks(book)"><i class="fa fa-edit" aria-hidden="true"></i></button>&nbsp;
         <button class="btn btn-danger btn-xs" (click)="deleteBooks(book)"><i class="fa fa-trash" aria-hidden="true"></i></button>

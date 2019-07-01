@@ -9,9 +9,9 @@ import { BookServiceService } from '../../services/book-service.service';
 })
 export class AddBooksComponent implements OnInit {
 
-  constructor(private bookServiceService:BookServiceService) { }
+  constructor(private bookServiceService: BookServiceService) { }
 
-  addBook(book:Book){
+  addBook(book: Book) {
     console.log(book);
     this.bookServiceService.addBook(book);
     // .subscribe(

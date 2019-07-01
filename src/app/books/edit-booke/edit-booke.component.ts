@@ -9,18 +9,17 @@ import { Book } from '../../models/book.model';
 })
 export class EditBookeComponent implements OnInit {
 
-  private book:Book;
-  constructor(private bookServiceService:BookServiceService) { }
+  private book: Book;
+  constructor(private bookServiceService: BookServiceService) { }
 
   ngOnInit() {
-    this.bookServiceService.editBook.subscribe(data => {this.book = data;console.log(this.book)});
+    this.bookServiceService.editBook.subscribe(data => {this.book = data; console.log(this.book)});
   }
 
-  editBook(editBook:Book)
-  {
-    console.log("*****************");
+  editBook(editBook: Book) {
+    console.log('*****************');
     console.log(editBook.id);
-    console.log("#############");
+    console.log('#############');
     console.log(editBook);
 
     this.bookServiceService.updatePolicy(editBook);

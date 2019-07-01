@@ -11,7 +11,6 @@ import { HttpResponse } from '@angular/common/http';
 })
 
 export class BooksComponent implements OnInit {
-//  public MyArrayType = Array<{id: number, text: string}>();
     private books: Book[] = new Array<any>();
     private booksArrray: Array<any>;
    arr: Array<{id: number, text: string}> = [
@@ -21,16 +20,11 @@ export class BooksComponent implements OnInit {
     {id: 4, text: 'Sentenc4 '},
 ];
   dtOptions: DataTables.Settings = {};
-  // persons: Person[] = [];
-  // // We use this trigger because fetching the list of persons can be quite long,
-  // // thus we ensure the data is fetched before rendering
-  // dtTrigger: Subject = new Subject();
 
   constructor(private router: Router, private route: ActivatedRoute, private bookServiceService: BookServiceService) { }
 
   url: string;
   addBooks() {
-    // this.router.navigate(['addbooks'], {relativeTo: this.route});
     this.router.navigate(['addbooks']);
   }
 
@@ -46,14 +40,6 @@ export class BooksComponent implements OnInit {
 
   deleteBooks(book) {
     this.bookServiceService.deleteBooks(book);
-    // .then(
-    //   res => {
-    //     console.log("Success");
-    //   },
-    //   err => {
-    //     console.log(err);
-    //   }
-    // );
   }
 
   ngOnInit() {
@@ -61,22 +47,6 @@ export class BooksComponent implements OnInit {
       pagingType: 'full_numbers',
       pageLength: 10
     };
-    // console.log(this.route.snapshot.url);
-  //   this.bookServiceService.getBooks().subscribe(
-  //     (allBooks) => {
-  //       // console.log('Observer got a next value: ' ),
-  //     //  this.books=allBooks;
-  //     console.log(allBooks)
-  //   // this.booksArrray = Array.of(this.books);
-  //       // console.log(this.booksArrray);
-  //       console.log(this.booksArrray);
-  // },
-  //     err => {console.error('Observer got an error: ' + err)},
-  //   )
-
-  // this.bookServiceService.getBooks().subscribe(data => {
-  //   this.booksArrray = data
-  // });
 
     this.bookServiceService.getBooks().subscribe(data => {
     this.booksArrray = data.map(e => {
@@ -88,5 +58,3 @@ export class BooksComponent implements OnInit {
   });
 }
 }
-
-// }
