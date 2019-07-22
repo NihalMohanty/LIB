@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookServiceService } from '../../services/book-service.service';
 import { Book } from '../../models/book.model';
 import { BookIssued } from '../../models/bookIssued.model';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-issuedbooks',
@@ -9,6 +10,7 @@ import { BookIssued } from '../../models/bookIssued.model';
   styleUrls: ['./issuedbooks.component.css']
 })
 export class IssuedbooksComponent implements OnInit {
+  dtTrigger: Subject<any> = new Subject();
   private issuedBooksArrray: Array<any>;
   private issuedBooks: BookIssued[] = new Array;
   private i:number=0;
@@ -34,6 +36,7 @@ export class IssuedbooksComponent implements OnInit {
           ...e.payload.doc.data()
         } as Book;
       });
+      this.dtTrigger.next();
       for (let index = 0; index < this.issuedBooksArrray.length; index++) {
        if(localStorage.getItem("loggedinUserid")===this.issuedBooksArrray[index].user_id && 
        localStorage.getItem("loggedinUser")===this.issuedBooksArrray[index].user_name)

@@ -13,7 +13,7 @@ export class EditBookeComponent implements OnInit {
   constructor(private bookServiceService: BookServiceService) { }
 
   ngOnInit() {
-    this.bookServiceService.editBook.subscribe(data => {this.book = data; console.log(this.book)});
+    this.bookServiceService.editBook.subscribe(data => {this.book = data; console.log(this.book); });
   }
 
   editBook(editBook: Book) {

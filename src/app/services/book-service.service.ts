@@ -32,7 +32,7 @@ export class BookServiceService {
    return this.firestore.collection('books').add(book);
   }
 
-  returnBook(book:BookIssued)
+  returnBook(book: BookIssued)
   {         
     book.returnDate = new Date();
     book.status = "returned";
@@ -99,9 +99,10 @@ export class BookServiceService {
     return this.firestore.collection('books').doc(book.id).delete();
   }
 
-  getBooks(){
+  getBooks() {
 
     // this.bookList = this.firebase.list('books');
+    console.log(this.firestore.collection('books').snapshotChanges());
     return this.firestore.collection('books').snapshotChanges();
     // return this.bookList;
 

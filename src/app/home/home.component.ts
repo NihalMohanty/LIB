@@ -15,7 +15,13 @@ export class HomeComponent implements OnInit {
   }
 
   goDashboard() {
+    //NESSERY DONT REMOVE THE LONES ONLY REMOVE THE CPOMMENTS 
+    // if(localStorage.getItem('loggedinUser') != null)
+    // {
     this.router.navigate(['/dashboard']);
+  // } else {
+  //   alert("Please login");
+  // }
   }
 
   goRegister(){
@@ -26,6 +32,10 @@ export class HomeComponent implements OnInit {
   goLogin(){
     console.log("login");
     this.router.navigate(['/login']);
+  }
+
+  goLogOut(){
+    localStorage.clear();
   }
 
 }
