@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   }
 
   goDashboard() {
-    //NESSERY DONT REMOVE THE LONES ONLY REMOVE THE CPOMMENTS 
+    // NESSERY DONT REMOVE THE LONES ONLY REMOVE THE CPOMMENTS
     // if(localStorage.getItem('loggedinUser') != null)
     // {
     this.router.navigate(['/dashboard']);
@@ -24,18 +24,18 @@ export class HomeComponent implements OnInit {
   // }
   }
 
-  goRegister(){
-    console.log("Register");
+  goRegister() {
+    console.log('Register');
     this.router.navigate(['/register']);
   }
 
-  goLogin(){
-    console.log("login");
+  goLogin() {
+    console.log('login');
     this.router.navigate(['/login']);
   }
 
-  goLogOut(){
-    localStorage.clear();
-  }
+  // goLogOut(){
+  //   localStorage.clear();
+  // }
 
 }

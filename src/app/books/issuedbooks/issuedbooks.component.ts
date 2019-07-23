@@ -12,16 +12,15 @@ import { Subject } from 'rxjs';
 export class IssuedbooksComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject();
   private issuedBooksArrray: Array<any>;
-  private issuedBooks: BookIssued[] = new Array;
-  private i:number=0;
+  private issuedBooks: BookIssued[] = new Array<any>();
+  private i = 0;
   dtOptions: DataTables.Settings = {};
 
-  constructor(private bookServiceService:BookServiceService) { }
+  constructor(private bookServiceService: BookServiceService) { }
 
-  returnBook(book:BookIssued)
-  {
+  returnBook(book: BookIssued) {
     console.log(book);
-    this.bookServiceService.returnBook(book);   
+    this.bookServiceService.returnBook(book);
   }
 
   ngOnInit() {
@@ -37,14 +36,13 @@ export class IssuedbooksComponent implements OnInit {
         } as Book;
       });
       this.dtTrigger.next();
+      // tslint:disable-next-line:prefer-for-of
       for (let index = 0; index < this.issuedBooksArrray.length; index++) {
-       if(localStorage.getItem("loggedinUserid")===this.issuedBooksArrray[index].user_id && 
-       localStorage.getItem("loggedinUser")===this.issuedBooksArrray[index].user_name)
-       {
+       if (localStorage.getItem('loggedinUserid') === this.issuedBooksArrray[index].user_id &&
+       localStorage.getItem('loggedinUser') === this.issuedBooksArrray[index].user_name) {
           this.issuedBooks[this.i] = this.issuedBooksArrray[index];
        }
-        
-      };
+      }
       console.log( this.issuedBooks);
     });
   }

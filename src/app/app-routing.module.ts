@@ -9,6 +9,7 @@ import { EditBookeComponent } from './books/edit-booke/edit-booke.component';
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { IssuedbooksComponent } from './books/issuedbooks/issuedbooks.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'issuedbooks',
     component: IssuedbooksComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 
