@@ -62,8 +62,8 @@ export class BooksComponent implements OnDestroy, OnInit, AfterViewInit {
 
     if (book.quantity > 0) {
     this.bookServiceService.IssueBooks(book);
-    }
     window.alert('Have a great time reading this book!!');
+    } else { window.alert('Opps! This book is not currently availble!'); }
 
   }
 
