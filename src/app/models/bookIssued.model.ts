@@ -11,7 +11,7 @@ export class BookIssued {
    public user_name: string;
 //    public user_email:string;
    public issueDate: Date;
-   public returnDate: Date;
+//    public returnDate: Date;
    public status: string;
 
 }
