@@ -30,8 +30,7 @@ export class BooksComponent implements OnDestroy, OnInit {
     { id: 4, text: 'Sentenc4 ' },
   ];
 
-  constructor(private router: Router, private route: ActivatedRoute, private bookServiceService: BookServiceService) { 
-   
+  constructor(private router: Router, private route: ActivatedRoute, private bookServiceService: BookServiceService) {
   }
 
   url: string;
@@ -54,12 +53,11 @@ export class BooksComponent implements OnDestroy, OnInit {
   }
   IssueBooks(book: Book) {
     console.log(book);
-    if(book.quantity>0)
-    {
-    this.bookServiceService.IssueBooks(book);
-  }
-  else
-  alert("Sorry this book is currently not available");
+    if (book.quantity > 0) {
+      this.bookServiceService.IssueBooks(book);
+    } else {
+      alert('Sorry this book is currently not available');
+    }
   }
 
   issuedBookList() {
@@ -120,10 +118,10 @@ export class BooksComponent implements OnDestroy, OnInit {
         } as Book;
       });
       this.dtTrigger.next();
-    //   setTimeout(function() {
-        // this.dtTrigger.next();
-    // }.bind(this));
-         });
+      //   setTimeout(function() {
+      // this.dtTrigger.next();
+      // }.bind(this));
+    });
   }
 
   ngOnDestroy(): void {

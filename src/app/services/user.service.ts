@@ -4,7 +4,7 @@ import { User } from '../models/user.model';
 import { Router } from '@angular/router';
 
 import { auth } from 'firebase/app';
-// import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 @Injectable({
@@ -13,41 +13,41 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 export class UserService {
   // authState: FirebaseAuthState = null;
   private user;
-  constructor( 
+  constructor(
     // private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router) { }
 
-  adduser(user:User)
-{
-  console.log(user);
-  return this.afs.collection('users').add(user);
-}
-login(name,password)
-{
-  // return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-  // .then((result) => {
-  // this.ngZone.run(() => {
-  // this.router.navigate(['dashboard']);
-  // console.log(result);
-  // });
+  adduser(user: User) {
+    console.log(user);
+    return this.afs.collection('users').add(user);
+  }
+  login() {
+    // return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    // .then((result) => {
+    // this.ngZone.run(() => {
+    // this.router.navigate(['dashboard']);
+    // console.log(result);
+    // });
 
-  var userCollection = this.afs.collection('users');
-  this.user = userCollection.valueChanges();
+    // var userCollection = this.afs.collection('users');
+    // this.user = userCollection.valueChanges();
 
-  // #### RETRIEVE INDIVIDUAL DOCUMENT HERE #### 
-  // return userCollection.doc(`${name}`).ref.get().then((doc) => {
-  //   this.user = doc.data();
-  //   console.log(this.user)
-  // });
+    // #### RETRIEVE INDIVIDUAL DOCUMENT HERE ####
+    // return userCollection.doc(`${name}`).ref.get().then((doc) => {
+    //   this.user = doc.data();
+    //   console.log(this.user)
+    // });
 
-  
-  return this.afs.collection('users').snapshotChanges();
-  // console.log(user);
+    return this.afs.collection('users').snapshotChanges();
+    // console.log(user);
 
 
-  // return 
-  // var user = this.afs.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
+    // return
+    // var user = this.afs.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
 
-}
+  }
+  isLoggedIn() {
+      return true;
+  }
 }

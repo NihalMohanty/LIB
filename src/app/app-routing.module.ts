@@ -10,6 +10,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { IssuedbooksComponent } from './books/issuedbooks/issuedbooks.component';
 import { AboutComponent } from './about/about.component';
+import { AlwaysAuthGuard, OnlyLoggedInUsersGuard } from './services/auth/auth.service';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
 
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AlwaysAuthGuard, OnlyLoggedInUsersGuard]
   },
   {
     path: 'book',

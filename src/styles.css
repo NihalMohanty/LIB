@@ -7,6 +7,8 @@ body {
   padding: 3em;
   font-family: 'Roboto Slab', serif;
   color: rgb(15, 13, 13);
+  background-color: #EAEDED;
+  /* background: linear-gradient(to bottom, #ffffcc 0%, #ccff99 100%); */
 }
 
 .align {

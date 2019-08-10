@@ -1,42 +1,46 @@
-
 <div class="container">
- 
-    <!-- <div class="modal" id="myModal"> -->
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Heading</h4>
-              <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-            </div>
-            
-            <!-- Modal body -->
-            <form #loginform="ngForm" (ngSubmit)="loginBook(loginform.value)" class="form form-register">
-            <div class="modal-body">
-              
-                    <div class="form-group">
-                        <label for="user_name">Name : </label>
-                        <input class="form-control" placeholder="Name" type="text" #name="ngModel" [(ngModel)]="user_name" name="user_name" required>
-                      </div>
-                      <!-- <div class="form-group">
+
+  <!-- <div class="modal" id="myModal"> -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="modal-title">Login</h3>
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      </div>
+
+      <!-- Modal body -->
+      <form #loginform="ngForm" (ngSubmit)="loginBook(loginform.value)" class="form form-register">
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="user_name">Name : </label>
+            <input class="form-control" placeholder="Name" type="text" #name="ngModel" [(ngModel)]="user_name"
+              name="user_name" required>
+            <p class="alert alert-danger" *ngIf="name.touched && name.value == null">Name is required!</p>
+          </div>
+          <!-- <div class="form-group">
                           <label for="email">Email : </label>
                           <input class="form-control" placeholder="Email" type="email" #name="ngModel" [(ngModel)]="email" name="email" required>
                         </div> -->
-                        <div class="form-group">
-                            <label for="password">Password : </label>
-                            <input class="form-control" placeholder="password" type="password" #name="ngModel" [(ngModel)]="password" name="password" required>
-                          </div>
-                  
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-success" data-dismiss="modal" (click)='onLogin()'>Submit</button>
-            </div>
-          </form>
+          <div class="form-group">
+            <label for="password">Password : </label>
+            <input class="form-control" placeholder="password" type="password" #pass="ngModel" [(ngModel)]="password"
+              name="password" required>
+            <p class="alert alert-danger" *ngIf="pass.value == null && pass.touched">Password is required!</p>
           </div>
+
         </div>
-      <!-- </div> -->
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="onClose()">Close</button>
+          <button type="submit" class="btn btn-success" data-dismiss="modal"
+            [disabled]="loginform.invalid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- </div> -->
 </div>

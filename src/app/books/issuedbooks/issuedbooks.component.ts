@@ -26,7 +26,7 @@ export class IssuedbooksComponent implements OnInit {
   ngOnInit() {
     this.dtOptions = {
       pagingType: 'full_numbers',
-      pageLength: 10
+      pageLength: 5
     };
     this.bookServiceService.issuedBookList().subscribe(data => {
       this.issuedBooksArrray = data.map(e => {

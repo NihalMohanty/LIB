@@ -21,6 +21,8 @@ import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { IssuedbooksComponent } from './books/issuedbooks/issuedbooks.component';
 import { AboutComponent } from './about/about.component';
+import { AlwaysAuthGuard } from './services/auth/auth.service';
+import { OnlyLoggedInUsersGuard } from './services/auth/auth.service';
 
 // import { AngularFireAuthModule } from '@angular/fire/auth';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -51,7 +53,7 @@ import { AboutComponent } from './about/about.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireDatabaseModule
   ],
-  providers: [BookServiceService, AngularFirestore],
+  providers: [BookServiceService, AngularFirestore, AlwaysAuthGuard, OnlyLoggedInUsersGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
