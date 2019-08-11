@@ -41,11 +41,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/dashboard']);
           break;
         } else {
-          // console.log('user not present!');
-          // this.router.navigate(['/register']);
-          // window.alert('Please Register yourself before Loging in!');
           if ( index === (this.user.length - 1)) {
-          console.log('user not present!');
           this.router.navigate(['/register']);
           window.alert('Please Register yourself before Loging in!');
           break;
@@ -53,37 +49,7 @@ export class LoginComponent implements OnInit {
         }
       }
     });
-    // console.log(this.user);
-
-    // this.bookServiceService.getBooks().subscribe(data => {
-    //   this.booksArrray = data.map(e => {
-    //     return {
-    //       id: e.payload.doc.id,
-    //       ...e.payload.doc.data()
-    //     } as Book;
-    //   })
-    // });
-    // }
   }
-
-  // onLogin(value) {
-  //   this.userService.login(value.user_name, value.password).subscribe(data => {
-  //     this.user = data.map(e => {
-  //       return {
-  //         id: e.payload.doc.id,
-  //         ...e.payload.doc.data()
-  //       } as User;
-  //     });
-  //   // tslint:disable-next-line:prefer-for-of
-  //     for (let index = 0; index < this.user.length; index++) {
-  //       if (value.user_name !== this.user[index].user_name && value.password !== this.user[index].password) {
-  //         // this.router.navigate(['/dashboard']);
-  //         window.alert('Please Register yourself before Loging In!');
-  //       }
-  //     }
-  //   });
-  //   // this.userService.isLoggedIn();
-  // }
 
   onClose() {
     this.router.navigate(['/']);

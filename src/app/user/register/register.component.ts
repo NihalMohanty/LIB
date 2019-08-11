@@ -16,11 +16,10 @@ export class RegisterComponent implements OnInit {
   }
 
   registerBook(user: User) {
-    console.log(user);
     user.role = 'user';
     this.userService.adduser(user);
     window.alert('Congrats! You can now Login easily!');
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
   onClose() {
