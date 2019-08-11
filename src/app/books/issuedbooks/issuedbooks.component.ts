@@ -21,40 +21,16 @@ export class IssuedbooksComponent implements OnInit, OnDestroy {
 
   constructor(private bookServiceService: BookServiceService, private router: Router) {
     this.bookServiceService.AllbookList.subscribe(data => { this.bookList = data; console.log(this.bookList); });
-
-    console.log("dummy");
-    console.log(this.bookList);
   }
 
 
   returnBook(book: BookIssued) {
-    console.log(this.issuedBooks);
-    // this.bookServiceService.getBooks().subscribe(data => {
-    //   this.bookList = data.map(e => {
-    //     return {
-    //       id: e.payload.doc.id,
-    //       ...e.payload.doc.data()
-    //     } as Book;
-    //   });
-    //   console.log(this.bookList);
-    //   this.bookServiceService.returnBook(book,this.bookList,this.issuedBooks);
-    //      });
     this.bookServiceService.returnBook(book, this.bookList, this.issuedBooks);
-    console.log("book list");
-    console.log(this.bookList);
     window.alert('You have successfully returned the book!');
     this.router.navigate(['/dashboard']);
-    // book.returnDate = new Date();
-    // book.status = "returned";
-    // console.log(book);
-    // this.bookServiceService.returnBook(book);
   }
 
   ngOnInit() {
-
-    console.log("dummy");
-    console.log(this.dummycall);
-
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10
@@ -68,19 +44,16 @@ export class IssuedbooksComponent implements OnInit, OnDestroy {
       });
       this.dtTrigger.next();
       // tslint:disable-next-line:prefer-for-of
-      console.log(this.issuedBooksArrray.length);
       for (let index = 0; index < this.issuedBooksArrray.length; index++) {
         if (localStorage.getItem('loggedinUserid') === this.issuedBooksArrray[index].user_id &&
           localStorage.getItem('loggedinUser') === this.issuedBooksArrray[index].user_name &&
-          this.issuedBooksArrray[index].status !== "returned") {
+          this.issuedBooksArrray[index].status !== 'returned') {
           this.issuedBooks[this.i] = this.issuedBooksArrray[index];
           console.log(this.issuedBooks[this.i]);
           this.i++;
         }
       }
-      // console.log( this.issuedBooks);
     });
-    console.log(this.issuedBooks);
   }
 
   ngOnDestroy(): void {

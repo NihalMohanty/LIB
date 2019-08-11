@@ -63,11 +63,11 @@
       </div>
       <div class="form-group">
         <label for="price">Price : </label>
-        <input class="form-control" placeholder="price" #bookPrise="ngModel" required type="number"
+        <input class="form-control" placeholder="price" #bookPrice="ngModel" required type="number"
           [(ngModel)]="book.price" name="price">
       </div>
-      <div *ngIf="bookPrise.invalid &&  bookPrise.touched" class="alert alert-danger">
-        <div *ngIf="bookPrise.errors.required">
+      <div *ngIf="bookPrice.invalid &&  bookPrice.touched" class="alert alert-danger">
+        <div *ngIf="bookPrice.errors.required">
           Please mention book price.
         </div>
       </div>

@@ -2,8 +2,6 @@
   <h2>Issued Books</h2>
 </div>
 <div class="container-fluid">
-  <!-- <button class="btn btn-success" (click)="issuedBookList()">Issued Books</button> -->
-  <br>
   <br>
   <br>
   <table datatable="ng" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
@@ -11,13 +9,6 @@
     <thead>
       <tr>
         <th>Book Name</th>
-        <!-- <th>Author</th> -->
-        <!-- <th>Book Type</th> -->
-        <!-- <th>Quantity</th> -->
-        <!-- <th>Borrowed</th> -->
-        <!-- <th>Edition</th> -->
-        <!-- <th>Prise</th> -->
-        <!-- <th>Image</th> -->
         <th>Action</th>
       </tr>
     </thead>
@@ -25,18 +16,9 @@
       <tr *ngFor="let book of issuedBooks">
 
         <td>{{ book.book_name }}</td>
-        <!-- <td>{{ book.author }}</td> -->
-        <!-- <td>{{ book.book_type }}</td> -->
-        <!-- <td>{{ book.quantity }}</td> -->
-        <!-- <td>{{ book.borrowed_book_qt }}</td> -->
-        <!-- <td>{{ book.edition }}</td> -->
-        <!-- <td>{{ book.prise }}</td> -->
-        <!-- <td><img src="{{book.book_image_url}}" class="img-thumbnail" alt="Cinque Terre" ></td> -->
         <td>
           <button class="btn btn-primary btn-xs" (click)="returnBook(book)"><i class="fa fa-minus"
               aria-hidden="true"></i></button>
-          <!-- <button class="btn btn-primary btn-xs" (click)="editBooks(book)"><i class="fa fa-edit" aria-hidden="true"></i></button>&nbsp;
-            <button class="btn btn-danger btn-xs" (click)="deleteBooks(book)"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
         </td>
       </tr>
     </tbody>

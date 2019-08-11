@@ -13,13 +13,8 @@ export class AddBooksComponent implements OnInit {
   constructor(private bookServiceService: BookServiceService, private router: Router) { }
 
   addBook(book: Book) {
-    console.log(book);
     this.bookServiceService.addBook(book);
     this.router.navigate(['/dashboard']);
-    // .subscribe(
-    //   success => {console.log('Observer got a next value: ' + success),alert("Book Added Successfully")},
-    //   err => {console.error('Observer got an error: ' + err),alert("Some error has occured try to add after some time")},
-    // );
   }
 
   ngOnInit() {

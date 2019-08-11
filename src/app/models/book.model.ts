@@ -7,7 +7,7 @@ export class Book{
     private book_type:string;
     private book_image_url:string;
     private edition:string;
-    private prise:number;
+    private price:number;
 
     // private addDate:Date;
     // private issueDate:Date;
@@ -26,7 +26,7 @@ export class Book{
         this.book_type=book.book_type;
         this.quantity=book.quantity;
         this.edition=book.edition;
-        this.prise=book.prise;
+        this.price=book.price;
         this.book_image_url=book.book_image_url;
     }
     

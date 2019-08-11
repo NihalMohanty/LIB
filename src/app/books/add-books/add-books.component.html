@@ -17,7 +17,6 @@
         <label for="author">Author : </label>
         <input class="form-control" placeholder="author" type="text" #authorName="ngModel" [(ngModel)]="author"
           name="author" required>
-        <!-- <br> -->
 
       </div>
       <div *ngIf="authorName.invalid &&  authorName.touched" class="alert alert-danger">
@@ -64,24 +63,14 @@
       </div>
       <div class="form-group">
         <label for="price">Price : </label>
-        <input class="form-control" placeholder="price" type="number" #bookPrise="ngModel" [(ngModel)]="prise"
+        <input class="form-control" placeholder="price" type="number" #bookPrice="ngModel" [(ngModel)]="price"
           name="price" required>
       </div>
-      <div *ngIf="bookPrise.invalid &&  bookPrise.touched" class="alert alert-danger">
-        <div *ngIf="bookPrise.errors.required">
+      <div *ngIf="bookPrice.invalid &&  bookPrice.touched" class="alert alert-danger">
+        <div *ngIf="bookPrice.errors.required">
           Please mention book price.
         </div>
       </div>
-      <!-- <div class="form-group">
-        <label for="book_image_url">Image Url : </label>
-        <input class="form-control" placeholder="Image Url" type="text" #bookImage="ngModel"
-          [(ngModel)]="book_image_url" name="book_image_url" required>
-      </div>
-      <div *ngIf="bookImage.invalid &&  bookImage.touched" class="alert alert-danger">
-        <div *ngIf="bookImage.errors.required">
-          Image URL can't be empty.
-        </div>
-      </div> -->
       <button type="submit" class="btn btn-success" [disabled]="addform.invalid">submit</button>
     </form>
   </div>
