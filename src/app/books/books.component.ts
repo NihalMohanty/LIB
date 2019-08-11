@@ -16,17 +16,18 @@ export class BooksComponent implements OnDestroy, OnInit, AfterViewInit {
   //  public MyArrayType = Array<{id: number, text: string}>();
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
-  flag:number=0;
+  flag = 0;
   private loggedinUserRole;
   private isAdmin;
   private books: Book[] = new Array<any>();
   private booksArrray: Array<any>;
+  // tslint:disable-next-line:no-output-rename
   @Output('AllbookList') dummy = new EventEmitter<Book[]>();
   private issuedBooks: BookIssued[] = new Array<any>();
   private i = 0;
   private issuedBooksArrray: Array<any>;
-  private issuedbooks:BookIssued[] = new Array<any>();
-   flag1: number = 0;
+  private issuedbooks: BookIssued[] = new Array<any>();
+   flag1  = 0;
   arr: Array<{ id: number, text: string }> = [
     { id: 1, text: 'Sentence 1' },
     { id: 2, text: 'Sentence 2' },
@@ -34,7 +35,7 @@ export class BooksComponent implements OnDestroy, OnInit, AfterViewInit {
     { id: 4, text: 'Sentenc4 ' },
   ];
 
-  constructor(private router: Router, private route: ActivatedRoute, private bookServiceService: BookServiceService) { 
+  constructor(private router: Router, private route: ActivatedRoute, private bookServiceService: BookServiceService) {
 
   }
 

@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center" class="container">
-  <h1>
+  <h1 (click)="showDialog = !showDialog">
     Welcome to {{ title }}!
   </h1>
 
@@ -11,22 +11,22 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-  
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner" style="height: 300px; width: 100%">
       <div class="carousel-item active">
         <img src="assets/library3.jpg" style="height: 300px; width: 100%">
       </div>
-  
+
       <div class="carousel-item">
         <img src="assets/library2.jpg" style="height: 300px; width: 100%">
       </div>
-  
+
       <div class="carousel-item">
         <img src="assets/library4.jpg">
       </div>
     </div>
-  
+
     <!-- Left and right controls -->
     <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
@@ -37,17 +37,28 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-<br>
+  <br>
   <!-- <div class="align" style="align:center"><button class="btn btn-success" (click)="goDashboard()">Lets Open The Door!!!!</button></div>  
   <div class="align" style="align:center"><button class="btn btn-success" (click)="goRegister()">Register</button></div><br>  
 
   <div class="align" style="align:center"><button class="btn btn-success" (click)="goLogin()">Login</button></div>  
   <div class="align" style="align:center"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register</button></div> -->
-  
 
 
-  <div class="align" style="align-self:center"><button class="btn btn-success" (click)="goDashboard()">Lets Open The Door!!!!</button></div> <br> 
-  <div class="align" style="align-self:center"><button class="btn btn-success" (click)="goRegister()">Register</button></div><br>
-  <div class="align" style="align-self:center"><button class="btn btn-success" (click)="goLogin()">Login</button></div>  
-  <!-- <div class="align" style="align:center"><button class="btn btn-success" (click)="goLogOut()">LogOut</button></div>  -->
+
+  <div class="bottom" style="align-self:center"><button class="btn btn-success"
+      (click)="showDialog = !showDialog;goDashboard()">Lets Open The
+      Door!!!!</button></div>
+  <div class="bottom" style="align-self:center"><button class="btn btn-success" (click)="goRegister()">Register</button>
+  </div>
+  <div class="bottom" style="align-self:center"><button class="btn btn-success" (click)="goLogin()">Login</button></div>
+
+  <div class="align" style="align-self:center"><button class="btn btn-success"
+      (click)="showDialog = !showDialog">About!</button></div>
+
+  <app-dialog [(visible)]="showDialog">
+    <h1><b>Welcome to my Library!</b></h1>
+    <div>An easy way to search any book you want and borrow it whenever you want!</div><br>
+    <button (click)="showDialog = !showDialog" class="btn btn-danger">Close</button>
+  </app-dialog>
 </div>

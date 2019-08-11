@@ -23,6 +23,8 @@ import { IssuedbooksComponent } from './books/issuedbooks/issuedbooks.component'
 import { AboutComponent } from './about/about.component';
 import { AlwaysAuthGuard } from './services/auth/auth.service';
 import { OnlyLoggedInUsersGuard } from './services/auth/auth.service';
+import { DialogComponent } from './home/dialog/dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { AngularFireAuthModule } from '@angular/fire/auth';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -41,6 +43,7 @@ import { OnlyLoggedInUsersGuard } from './services/auth/auth.service';
     LoginComponent,
     IssuedbooksComponent,
     AboutComponent,
+    DialogComponent
     // AngularFireAuthModule,
     // AngularFirestoreModule
   ],
@@ -50,6 +53,7 @@ import { OnlyLoggedInUsersGuard } from './services/auth/auth.service';
     DataTablesModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireDatabaseModule
   ],

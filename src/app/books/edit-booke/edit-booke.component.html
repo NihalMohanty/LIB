@@ -3,7 +3,6 @@
   <div>
     <form #editform="ngForm" (ngSubmit)="editBook(editform.value)" class="form form-register">
       <div class="form-group">
-        <!-- <label for="book_Name">id: </label> -->
         <input class="form-control" placeholder="Name" type="hidden" [(ngModel)]="book.id" name="id">
       </div>
       <div class="form-group">
@@ -42,7 +41,6 @@
           Please select book type.
         </div>
       </div>
-      <!-- <br> -->
       <div class="form-group">
         <label for="quantity">quantity : </label>
         <input class="form-control" placeholder="quantity" #bookQantity="ngModel" required type="number"
@@ -73,16 +71,6 @@
           Please mention book price.
         </div>
       </div>
-      <!-- <div class="form-group">
-        <label for="book_image_url">Image Url : </label>
-        <input class="form-control" placeholder="Image Url" type="text" #bookImage="ngModel" required
-          [(ngModel)]="book.book_image_url" name="book_image_url">
-      </div>
-      <div *ngIf="bookImage.invalid &&  bookImage.touched" class="alert alert-danger">
-        <div *ngIf="bookImage.errors.required">
-          Image URL can't be empty.
-        </div>
-      </div> -->
       <button type="submit" class="btn btn-success" [disabled]="editform.invalid">submit</button>
     </form>
   </div>
