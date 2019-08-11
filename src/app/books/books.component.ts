@@ -23,7 +23,7 @@ export class BooksComponent implements OnDestroy, OnInit {
   private i = 0;
   private issuedBooksArrray: Array<any>;
   private issuedbooks: BookIssued[] = new Array<any>();
-   flag1  = 0;
+  flag1 = 0;
   arr: Array<{ id: number, text: string }> = [
     { id: 1, text: 'Sentence 1' },
     { id: 2, text: 'Sentence 2' },
@@ -55,8 +55,8 @@ export class BooksComponent implements OnDestroy, OnInit {
   IssueBooks(book: Book) {
 
     if (book.quantity > 0) {
-    this.bookServiceService.IssueBooks(book);
-    window.alert('Have a great time reading this book!!');
+      this.bookServiceService.IssueBooks(book);
+      window.alert('Have a great time reading this book!!');
     } else { window.alert('Opps! This book is not currently availble!'); }
 
   }
@@ -88,7 +88,7 @@ export class BooksComponent implements OnDestroy, OnInit {
         } as Book;
       });
       this.dtTrigger.next();
-         });
+    });
   }
 
   ngOnDestroy(): void {

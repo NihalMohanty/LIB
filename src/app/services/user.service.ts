@@ -9,7 +9,6 @@ export class UserService {
   constructor( private afs: AngularFirestore) { }
 
   adduser(user: User) {
-    console.log(user);
     return this.afs.collection('users').add(user);
   }
   login() {

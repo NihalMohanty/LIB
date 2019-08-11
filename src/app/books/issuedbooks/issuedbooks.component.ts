@@ -56,6 +56,10 @@ export class IssuedbooksComponent implements OnInit, OnDestroy {
     });
   }
 
+  goBackDash() {
+    this.router.navigate(['/dashboard']);
+  }
+
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
