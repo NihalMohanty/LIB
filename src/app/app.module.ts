@@ -26,10 +26,6 @@ import { OnlyLoggedInUsersGuard } from './services/auth/auth.service';
 import { DialogComponent } from './home/dialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// import { AngularFireAuthModule } from '@angular/fire/auth';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +40,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IssuedbooksComponent,
     AboutComponent,
     DialogComponent
-    // AngularFireAuthModule,
-    // AngularFirestoreModule
   ],
   imports: [
     BrowserModule,
