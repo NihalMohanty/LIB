@@ -14,22 +14,16 @@ import { Subject } from 'rxjs';
 export class BooksComponent implements OnDestroy, OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
-  flag = 0;
+  // flag = 0;
   private loggedinUserRole;
   private isAdmin;
   private books: Book[] = new Array<any>();
   private booksArrray: Array<any>;
   private issuedBooks: BookIssued[] = new Array<any>();
-  private i = 0;
+  // private i = 0;
   private issuedBooksArrray: Array<any>;
   private issuedbooks: BookIssued[] = new Array<any>();
-  flag1 = 0;
-  arr: Array<{ id: number, text: string }> = [
-    { id: 1, text: 'Sentence 1' },
-    { id: 2, text: 'Sentence 2' },
-    { id: 3, text: 'Sentence 3' },
-    { id: 4, text: 'Sentenc4 ' },
-  ];
+  // flag1 = 0;
 
   constructor(private router: Router, private route: ActivatedRoute, private bookServiceService: BookServiceService) {
 
@@ -50,13 +44,16 @@ export class BooksComponent implements OnDestroy, OnInit {
   }
 
   deleteBooks(book) {
+    window.alert('Are you sure you wanna delete the book!');
     this.bookServiceService.deleteBooks(book);
+    window.location.reload();
   }
   IssueBooks(book: Book) {
 
     if (book.quantity > 0) {
       this.bookServiceService.IssueBooks(book);
       window.alert('Have a great time reading this book!!');
+      window.location.reload();
     } else { window.alert('Opps! This book is not currently availble!'); }
 
   }
@@ -75,8 +72,8 @@ export class BooksComponent implements OnDestroy, OnInit {
       this.isAdmin = true;
       console.log(this.loggedinUserRole);
       this.dtOptions = {
-        pagingType: 'full_numbers',
-        pageLength: 10
+        // pagingType: 'full_numbers',
+        // pageLength: 10
       };
     }
 
