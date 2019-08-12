@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   registerBook(user: User) {
     user.role = 'user';
     this.userService.adduser(user);
-    window.alert('Congrats! You can now Login easily!');
+    alert('Congrats! You can now Login easily!');
     this.router.navigate(['/']);
   }
 

@@ -12,43 +12,30 @@ export class LoginComponent implements OnInit {
   private user: User[];
   flag = false;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {
+    this.userService.AllUserList.subscribe(data => { this.user = data; console.log(this.user); });
+  }
 
   ngOnInit() {
   }
 
   loginBook(value) {
-    console.log(value);
-    console.log(value.user_name);
-    console.log(value.password);
-    this.userService.login().subscribe(data => {
-      this.user = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as User;
-      }),
 
-        console.log(this.user);
-      // tslint:disable-next-line:prefer-for-of
-      for (let index = 0; index < this.user.length; index++) {
-        if (value.user_name === this.user[index].user_name && value.password === this.user[index].password) {
-          localStorage.setItem('loggedinUserid', this.user[index].id);
-          console.log(localStorage.getItem('loggedinUserid'));
-          localStorage.setItem('loggedinUser', value.user_name);
-          localStorage.setItem('loggedinUserRole', this.user[index].role);
-          console.log('User set succfully');
-          this.router.navigate(['/dashboard']);
-          break;
-        } else {
-          if ( index === (this.user.length - 1)) {
-          this.router.navigate(['/register']);
-          window.alert('Please Register yourself before Loging in!');
-          break;
-        }
-        }
+    console.log(this.user);
+    // tslint:disable-next-line:prefer-for-of
+    for (let index = 0; index < this.user.length; index++) {
+      if (value.user_name === this.user[index].user_name && value.password === this.user[index].password) {
+        localStorage.setItem('loggedinUserid', this.user[index].id);
+        localStorage.setItem('loggedinUser', value.user_name);
+        localStorage.setItem('loggedinUserRole', this.user[index].role);
+        this.router.navigate(['/dashboard']);
+        this.flag = true;
       }
-    });
+    }
+    if (this.flag === false) {
+      alert('Seems like you are new here! Please Register yourself before Loging in!');
+      this.router.navigate(['/']);
+    }
   }
 
   onClose() {

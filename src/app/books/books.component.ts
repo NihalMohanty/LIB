@@ -43,7 +43,6 @@ export class BooksComponent implements OnDestroy, OnInit {
   deleteBooks(book) {
     window.alert('Are you sure you wanna delete the book!');
     this.bookServiceService.deleteBooks(book);
-    window.location.reload();
   }
   IssueBooks(book: Book) {
 

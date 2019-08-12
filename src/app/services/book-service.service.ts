@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Book } from '../models/book.model';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { BookIssued } from '../models/bookIssued.model';

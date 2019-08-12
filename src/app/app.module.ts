@@ -25,6 +25,7 @@ import { AlwaysAuthGuard } from './services/auth/auth.service';
 import { OnlyLoggedInUsersGuard } from './services/auth/auth.service';
 import { DialogComponent } from './home/dialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireDatabaseModule
   ],
-  providers: [BookServiceService, AngularFirestore, AlwaysAuthGuard, OnlyLoggedInUsersGuard],
+  providers: [BookServiceService, AngularFirestore, AlwaysAuthGuard, OnlyLoggedInUsersGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
